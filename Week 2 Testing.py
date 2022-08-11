@@ -21,7 +21,7 @@ print("The " + m + " chases the " + h)  # what the book wants...(this on the oth
 print(h * 4)  # I'm curious how I would space this
 print(10 % 50)  # don't understand what % does
 print(25 // 100)  # wtf is a quotient
-
+print(2**3**2)  # youll have to explain this one to me
 print(chr(20))  # So I was expecting DC4...idk what is going on
 print(ord('R'))  # So the "ord" only accepts a single character. Shouldn't it work for things like DC4 aka 20?
 print(chr(65))  # well that worked
