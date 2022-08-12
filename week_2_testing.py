@@ -14,8 +14,13 @@ print(c)
 h = "hooker"
 m = "meth head"
 print("The", m, "chases the", h)  # what I would do
-print("The " + m + " chases the " + h)  # what the book wants...(this on the other hand is just fucking stupid to me)
 
+# ======================================================================================================================
+print(f"The {m} chases the {h}")  # how i would do it
+# ======================================================================================================================
+
+
+print("The " + m + " chases the " + h)  # what the book wants...(this on the other hand is just fucking stupid to me)
 
 # ASCII Characters & Arithmetic Operators
 
@@ -47,7 +52,6 @@ print(f"join with ' ' -> {' '.join(hookers)}")
 print(f"join with ',' -> {','.join(hookers)}")
 print(f"join with ' chokes ' -> {' chokes '.join(hookers)}")
 
-
 # ======================================================================================================================
 print("\nModular Arithmetic")
 print("-" * 40)
@@ -62,7 +66,7 @@ you want to know what number the hand will point to at 17:00 military time.
 
 print(f"17 mod 12 = {17 % 12}")
 
-#=======================================================================================================================
+# =======================================================================================================================
 print("\nQuotient")
 print("-" * 40)
 
@@ -75,26 +79,26 @@ The quotient is the whole number from a division.
 print(f"10 / 3 = {10 / 3}")
 print(f"quotient of 10 / 3 = {10 // 3}")
 
-#=======================================================================================================================
+# =======================================================================================================================
 print("\nExponents")
 print("-" * 40)
 
-print(2**3**2)  # youll have to explain this one to me
+print(2 ** 3 ** 2)  # youll have to explain this one to me
 
 """
 In python, ** is how you do exponents in python. 3 to the power of 3 (3^3) is 3**3 
 """
 
-print(f"3^3 = {3**3}")
+print(f"3^3 = {3 ** 3}")
 
-#=======================================================================================================================
+# =======================================================================================================================
 print("\nASCII Characters")
 print("-" * 40)
 
 print(chr(20))  # So I was expecting DC4...idk what is going on
 print(ord('R'))  # So the "ord" only accepts a single character. Shouldn't it work for things like DC4 aka 20?
 print(chr(65))  # well that worked
-print(ord('A'))   # and this works
+print(ord('A'))  # and this works
 
 """
 So this is the interesting part, it looks like anything 31 or less I would call a special character that does something
@@ -104,8 +108,8 @@ the line. And 8 is 'backspace'.
 """
 
 print("\ncarriage return")
-print("abc" + chr(13) + "123") # notice how the cursor went back to the start and typed over 'abc'
-print("abcdef" + chr(13) + "123") # the whole line is rewritten, so 'def' is gone too
+print("abc" + chr(13) + "123")  # notice how the cursor went back to the start and typed over 'abc'
+print("abcdef" + chr(13) + "123")  # the whole line is rewritten, so 'def' is gone too
 
 print("\nbackspace")
-print("abc" + chr(8) + "123") # backspace once
+print("abc" + chr(8) + "123")  # backspace once
