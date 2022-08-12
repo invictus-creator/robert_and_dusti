@@ -1,3 +1,4 @@
+# <editor-fold desc="Robert">
 """I'm just playing around with some things from Week 2's reading.
 Still no rocket science :( """
 # testing glue or concatenating of expressions
@@ -14,22 +15,32 @@ print(c)
 h = "hooker"
 m = "meth head"
 print("The", m, "chases the", h)  # what I would do
+# </editor-fold>
 
 # ======================================================================================================================
+# <editor-fold desc="Dusti">
 print(f"The {m} chases the {h}")  # how i would do it
+# </editor-fold>
 # ======================================================================================================================
 
 
+# <editor-fold desc="Robert">
 print("The " + m + " chases the " + h)  # what the book wants...(this on the other hand is just fucking stupid to me)
+# </editor-fold>
 
 # ASCII Characters & Arithmetic Operators
 
 # ======================================================================================================================
+# <editor-fold desc="Dusti">
 print("\nAdding spaces")
 print("-" * 40)
+# </editor-fold>
 
+# <editor-fold desc="Robert">
 print(h * 4)  # I'm curious how I would space this
+# </editor-fold>
 
+# <editor-fold desc="Dusti">
 """
 There are a couple ways to do this. 
 """
@@ -51,13 +62,19 @@ print(f"list of hookers: {hookers}")
 print(f"join with ' ' -> {' '.join(hookers)}")
 print(f"join with ',' -> {','.join(hookers)}")
 print(f"join with ' chokes ' -> {' chokes '.join(hookers)}")
+# </editor-fold>
 
 # ======================================================================================================================
+# <editor-fold desc="Dusti">
 print("\nModular Arithmetic")
 print("-" * 40)
+# </editor-fold>
 
+# <editor-fold desc="Robert">
 print(10 % 50)  # don't understand what % does
+# </editor-fold>
 
+# <editor-fold desc="Dusti">
 """ 
 This is called modular arithmetic, the % is the modulo operator. It's a confusing thing to get your head around. It's 
 math done on a circular line. The best way to understand it is to think of a clock. There are 12 numbers on a clock and
@@ -65,41 +82,59 @@ you want to know what number the hand will point to at 17:00 military time.
 """
 
 print(f"17 mod 12 = {17 % 12}")
+# </editor-fold>
 
 # =======================================================================================================================
+# <editor-fold desc="Dusti">
 print("\nQuotient")
 print("-" * 40)
+# </editor-fold>
 
+# <editor-fold desc="Robert">
 print(25 // 100)  # wtf is a quotient
+# </editor-fold>
 
+# <editor-fold desc="Dusti">
 """
 The quotient is the whole number from a division.
 """
 
 print(f"10 / 3 = {10 / 3}")
 print(f"quotient of 10 / 3 = {10 // 3}")
+# </editor-fold>
 
 # =======================================================================================================================
+# <editor-fold desc="Dusti">
 print("\nExponents")
 print("-" * 40)
+# </editor-fold>
 
+# <editor-fold desc="Robert">
 print(2 ** 3 ** 2)  # youll have to explain this one to me
+# </editor-fold>
 
+# <editor-fold desc="Dusti">
 """
 In python, ** is how you do exponents in python. 3 to the power of 3 (3^3) is 3**3 
 """
 
 print(f"3^3 = {3 ** 3}")
+# </editor-fold>
 
 # =======================================================================================================================
+# <editor-fold desc="Dusti">
 print("\nASCII Characters")
 print("-" * 40)
+# </editor-fold>
 
+# <editor-fold desc="Robert">
 print(chr(20))  # So I was expecting DC4...idk what is going on
 print(ord('R'))  # So the "ord" only accepts a single character. Shouldn't it work for things like DC4 aka 20?
 print(chr(65))  # well that worked
 print(ord('A'))  # and this works
+# </editor-fold>
 
+# <editor-fold desc="Dusti">
 """
 So this is the interesting part, it looks like anything 31 or less I would call a special character that does something
 when read by the computer. DC4 doesn't display as 'DC4' it stands for 'device control 4'. Which doesn't really do 
@@ -113,3 +148,4 @@ print("abcdef" + chr(13) + "123")  # the whole line is rewritten, so 'def' is go
 
 print("\nbackspace")
 print("abc" + chr(8) + "123")  # backspace once
+# </editor-fold>
