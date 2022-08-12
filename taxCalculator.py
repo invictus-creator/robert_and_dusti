@@ -22,7 +22,7 @@ Compute a user's estimated income tax.
 
 # Initialize the constants
 FED_TAX_RATE = .0945
-FICA_TAX_RATE =  .0765
+FICA_TAX_RATE = .0765
 
 # Request the inputs
 name = input("Please enter your name: ")
@@ -32,8 +32,8 @@ stateTaxRate = float(input("Please enter your state tax rate: "))
 # Compute the taxes
 fedTax = grossIncome * FED_TAX_RATE
 ficaTax = grossIncome * FICA_TAX_RATE
-stateTax = grossIncome * FED_TAX_RATE
+stateTax = grossIncome * stateTaxRate
 estimatedTax = fedTax + ficaTax + stateTax
 
 # Display the estimated tax
-print(name + "'s estimated tax is $" + round(estimatedTax,2), "based on a gross income of $" + grossIncome)
+print(name + "'s estimated tax is $" + str(round(estimatedTax,2)), "based on a gross income of $" + str(grossIncome))
