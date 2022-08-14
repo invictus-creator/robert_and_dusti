@@ -34,9 +34,40 @@ Year   Salary
 """
 
 
+# TABULATE ===============================================================================================
+
+# from tabulate import tabulate
+#
+# # get inputs
+# starting_salary = int(input("Enter the starting salary: "))
+# percent_increase = int(input("Enter the annual % increase: "))
+# number_of_years = int(input("Enter the number of years: "))
+#
+# # convert percent to use in incrementing salary
+# percent_increase = 1 + (percent_increase / 100)
+#
+# # create list to hold data
+# data = []
+#
+# # add data to list
+# salary = float(starting_salary)
+# for year in range(1, number_of_years + 1):
+#     inner_data = [year, f"{salary:.2f}"]  # row in table
+#     data.append(inner_data)  # add row to list
+#     salary *= percent_increase  # increment salary
+#
+# print(tabulate(data, headers=["Year", "Salary"]))
+
+
+# NO TABULATE ================================================================================
+
 # function for formatting output
 def tabular_format(col1, col2):
-    formatted_string = f"{col1:<4}    {col2:<8}"
+    if type(col2) != str:
+        _col2 = f"{col2:.2f}"
+    else:
+        _col2 = col2
+    formatted_string = f"{col1:<4}    {_col2:<8}"
     return formatted_string
 
 
@@ -45,8 +76,16 @@ starting_salary = int(input("Enter the starting salary: "))
 percent_increase = int(input("Enter the annual % increase: "))
 number_of_years = int(input("Enter the number of years: "))
 
+# # convert percent to use in incrementing salary
+percent_increase = 1 + (percent_increase / 100)
+
 # print table header
 header = tabular_format("Year", "Salary")
 print(header)
 print("-" * len(header))
 
+# print table data
+salary = starting_salary
+for year in range(1, number_of_years + 1):
+    print(tabular_format(year, salary))
+    salary *= percent_increase
