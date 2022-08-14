@@ -1,5 +1,5 @@
 """
-Program: accountBalanceCalculator.py
+Program: week_3_assignment.py
 Author: Robert Timberlake
 Compute a user's account balance.
 1. The inputs are
