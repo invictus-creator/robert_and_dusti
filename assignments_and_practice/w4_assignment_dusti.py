@@ -3,6 +3,7 @@ while True:
     name = input("Enter your name or 'q' to quit: ")
 
     if name == "q":
+        print("Exiting Program")
         break
 
     amount = float(input("Enter the amount of your account balance: "))
