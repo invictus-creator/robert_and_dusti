@@ -67,7 +67,7 @@ def tabular_format(col1, col2):
         _col2 = f"{col2:.2f}"
     else:
         _col2 = col2
-    formatted_string = f"{col1:<4}    {_col2:<8}"
+    formatted_string = f"{col1:>4}    {_col2:<8}"
     return formatted_string
 
 
