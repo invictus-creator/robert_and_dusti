@@ -1,5 +1,4 @@
 import os
-import pyvenv.cfg
 
 try:
     os.system("pip install -r requirements.txt")

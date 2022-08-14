@@ -40,3 +40,4 @@ Enter =, <, or >: >
 Your number is 1
 Enter =, <, or >: >
 I'm out of guesses, and you cheated!
+
