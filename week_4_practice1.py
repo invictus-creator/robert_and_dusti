@@ -11,18 +11,28 @@ Hooray, I've got it in X tries as your final output.
 import random
 import math
 
-maxTries = math.ceil(math.log2(large - small))
+
 smaller = int(input("Enter the smaller number: "))
 larger = int(input("Enter the larger number: "))
+maxTries = math.ceil(math.log2(larger))
 count = 0
 while True:
     count += 1
     print(smaller, larger)
 
-    computerNumber = random.randint(smaller, larger)
+    try:
+        computerNumber = random.randint(smaller, larger)
+    except ValueError:
+        count -= 1
+        continue
+
     print("Your number is:", computerNumber)
 
     correction = input("Enter =, <, or >: ")
+
+    if count > maxTries:
+        print("I'm out of guesses, and you cheated!")
+        break
 
     if correction == "<":
         larger = computerNumber - 1
