@@ -3,7 +3,7 @@ while True:
     # get name from user
     name = input("Enter your name or 'q' to quit: ")
 
-    # if user inputs q then exit loop
+    # if user inputs q then end program
     if name == "q":
         print("Exiting Program")
         break

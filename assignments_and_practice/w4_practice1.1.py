@@ -2,7 +2,6 @@
 import random
 import math
 
-
 smaller = int(input("Enter the smaller number: "))
 larger = int(input("Enter the larger number: "))
 maxTries = math.ceil(math.log2(larger))
@@ -12,7 +11,7 @@ while True:
     print(smaller, larger)
 
     try:
-        computerNumber = random.randint(smaller, larger)
+        computerNumber = random.randint(smaller, larger + 1)
     except ValueError:
         count -= 1
         continue
@@ -21,7 +20,7 @@ while True:
 
     correction = input("Enter =, <, or >: ")
 
-    if count > maxTries:
+    if count == maxTries:
         print("I'm out of guesses, and you cheated!")
         break
 
@@ -34,6 +33,3 @@ while True:
         break
     else:
         print("Invalid input. Please enter one of the prompted entries")
-
-
-

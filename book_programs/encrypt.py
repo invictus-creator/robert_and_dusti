@@ -13,5 +13,5 @@ for ch in plainText:
     if cipherValue > ord('z'):
         cipherValue = ord('a') + distance - \
                       (ord('z') - ordValue + 1)
-    code +=  chr(cipherValue)
+    code += chr(cipherValue)
 print(code)

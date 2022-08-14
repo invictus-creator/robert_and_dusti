@@ -21,4 +21,3 @@ while count < max_tries:
     if count == max_tries:
         print("I'm out of guesses, and you cheated!")
         break
-        
