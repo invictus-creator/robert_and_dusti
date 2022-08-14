@@ -1,5 +1,5 @@
 """
-Program: taxCalculator.py
+Program: w2_assignment.py
 Author: Robert Timberlake
 Compute a user's estimated income tax.
 1. Significant constants

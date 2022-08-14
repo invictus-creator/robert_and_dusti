@@ -1,5 +1,5 @@
 """
-Program: week_3_assignment.py
+Program: w3_assignment.py
 Author: Robert Timberlake
 Compute a user's account balance.
 1. The inputs are
@@ -14,9 +14,7 @@ Compute a user's account balance.
 4. The outputs are
     amount sum
 """
-
-
-
+# Request the inputs
 name = input("Please enter your name: ")
 amount1 = float(input("Please enter the first amount: "))
 amount2 = float(input("Please enter the second amount: "))
