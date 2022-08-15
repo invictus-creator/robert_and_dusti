@@ -375,4 +375,3 @@ for key in theDictionary:
     if theDictionary[key] == theMaximum:
         print("The mode is", key)
         break
-        
