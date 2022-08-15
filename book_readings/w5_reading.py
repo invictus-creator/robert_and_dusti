@@ -1,7 +1,7 @@
 #  List Literals and Basic Operators
 [1950, 1952, 1958]  # A list of integers
 ["apples", "oranges", "cherries"]  # A list of strings
-[[1920, 1921], [1922, 1923]]  # List of of lists
+[[1920, 1921], [1922, 1923]]  # List of lists
 
 import math
 
@@ -27,9 +27,9 @@ third
 # len with a string
 len(first)  # len shows the number of items in an object
 """4"""
-first[0]  # I'm confused. I believe this references the first element in list "first" TODO
+first[0]  # I'm confused. I believe this references the first element in list "first"
 """1"""
-first[2:4]  # I'm confused. Book says this slices for a sublist TODO
+first[2:4]  # I'm confused. Book says this slices for a sublist
 """[3, 4]"""
 # ====================================================================================================================
 # Concatenation with a list
@@ -279,7 +279,7 @@ info
 """{'name': 'Sandy', 'occupation': 'manager'}"""
 
 print(info.get("job", None))  # Look for job in "info" and returns none if there is no entry
-"""None"""
+"""None"""[
 # ====================================================================================================================
 # Removing dictionary entry
 print(info.pop("job", None))
@@ -309,8 +309,10 @@ for key in theKeys:
 Dictionary Operation	         What It Does
 len(d)	                Returns the number of entries in d.
 d[key]	                Used for inserting a new key, replacing a value, or obtaining a value at an existing key.
-d.get(key [, default])	Returns the value if the key exists or returns the default if the key does not exist. Raises an error if the default is omitted and the key does not exist.
-d.pop(key [, default])	Removes the key and returns the value if the key exists or returns the default if the key does not exist. Raises an error if the default is omitted and the key does not exist.
+d.get(key [, default])	Returns the value if the key exists or returns the default if the key does not exist. 
+Raises an error if the default is omitted and the key does not exist.
+d.pop(key [, default])	Removes the key and returns the value if the key exists or returns the default if the key 
+does not exist. Raises an error if the default is omitted and the key does not exist.
 list(d.keys())	        Returns a list of the keys.
 list(d.values())	    Returns a list of the values.
 list(d.items())	        Returns a list of tuples containing the keys and values for each entry.
@@ -327,7 +329,7 @@ hexToBinaryTable = {'0': '0000', '1': '0001', '2': '0010',
                     'F': '1111'}
 
 
-def convert(number, table):
+def convert(=number, table):
     """Builds and returns the base two representation of
    number. """
     binary = ""
@@ -361,7 +363,7 @@ for line in f:
 theDictionary = {}
 for word in words:
     number = theDictionary.get(word, None)
-    if number == None:
+    if number is None:
         # word entered for the first time
         theDictionary[word] = 1
     else:
