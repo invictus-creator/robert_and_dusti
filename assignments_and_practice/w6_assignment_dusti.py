@@ -22,6 +22,7 @@ class PizzaOrderApp(object):
         self._all_orders = list()
         self._pizza_order = dict()
 
+    # <editor-fold desc="This is bullshit">
     def set_amount(self, order_amount: float):
         """Sets the order amount.
 
@@ -84,7 +85,9 @@ class PizzaOrderApp(object):
             return self._all_orders[order_pos]['number']
         else:
             return None
+    # </editor-fold>
 
+    # <editor-fold desc="This is a lil better">
     def display_menu(self):
         """Displays the option menu to the user via print to console, and gets input
         """
@@ -182,12 +185,14 @@ class PizzaOrderApp(object):
 
     def save_orders(self):
         """Saves all orders to `orders.txt`.
-        """
+                """
         with open(f"{PATH}/orders.txt", 'w', encoding="utf-8") as f:
             for order in self._all_orders:
                 f.write(f"{order['number']}, {order['type']}, {order['amount']}\n")
 
         print("\nData saved.")
+
+    # </editor-fold>
 
     def run(self):
         """The main loop for the application.
@@ -213,6 +218,7 @@ class PizzaOrderApp(object):
         print("Exiting program...")
 
 
-if __name__ == '__main__':
-    app = PizzaOrderApp()
-    app.run()
+# if __name__ == '__main__':
+#     app = PizzaOrderApp()
+#     app.run()
+
