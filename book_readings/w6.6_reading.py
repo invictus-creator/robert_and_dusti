@@ -240,3 +240,5 @@ def summation(lower, upper):
     jump_table['1'] = insert
     jump_table['2'] = replace
     jump_table['3'] = remove
+# Simpler way to write the above
+    jump_table = {'1': insert, '2': replace, '3': remove}
