@@ -150,7 +150,7 @@ class PizzaApp(object):
 
     def save_orders(self):
         """Saves all orders to `orders.txt`.
-                """
+        """
         with open(f"{PATH}/dusti_orders.txt", 'w', encoding="utf-8") as f:
             for pizza_order in self.orders:
                 f.write(f"{pizza_order.get_number()}, {pizza_order.get_type()}, {pizza_order.get_amount()}\n")
