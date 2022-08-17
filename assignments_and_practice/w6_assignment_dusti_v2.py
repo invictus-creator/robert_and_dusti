@@ -13,9 +13,9 @@ class PizzaOrder(object):
         self._number = None
 
     def __str__(self):
-        return f"number: ({self._number, type(self._number)}), " \
-               f"type: ({self._type, type(self._type)}), " \
-               f"amount: ({self._amount, type(self._amount)})"
+        return f"Order number: {self._number}\n" \
+               f"Order type: {self._type}\n" \
+               f"Order amount: {self._amount}"
 
     def set_amount(self, order_amount):
         self._amount = order_amount
@@ -73,9 +73,7 @@ class PizzaApp(object):
 
         # loop over each order and print order info
         for pizza_order in self.orders:
-            print(f"Order number: {pizza_order.get_number()}")
-            print(f"Order type: {pizza_order.get_type()}")
-            print(f"Order amount: {pizza_order.get_amount()}")
+            print(pizza_order)
             print("-" * len(title))
 
     def add_order(self):
