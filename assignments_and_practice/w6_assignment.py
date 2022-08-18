@@ -64,17 +64,26 @@ class BurritoApp(object):
                       "prompted options: ")
 
     def add_order(self):
-        burrito_order = BurritoOrder()
+        try:
+            order_number = int(input("\nEnter your order number: "))
+            for _order in self.orders:
+                if order_number == bu.get_number()
+                    print("Order number already exists. Please Enter a different number.")
+                self.add_order()
+                return
+            order_type = input("Enter your order type: ")
+            order_amount = float(input("Enter your order amount: "))
 
-        order_number = int(input("\nEnter your order number: "))
-        order_type = input("Enter your order type: ")
-        order_amount = float(input("Enter your order amount: "))
+            # New burrito order
+            burrito_order = BurritoOrder()
 
-        burrito_order.set_number(order_number)
-        burrito_order.set_type(order_type)
-        burrito_order.set_amount(order_amount)
+            burrito_order.set_number(order_number)
+            burrito_order.set_type(order_type)
+            burrito_order.set_amount(order_amount)
 
-        self.orders.append(burrito_order)
+            self.orders.append(burrito_order)
+        except ValueError:
+            print("Input not recognized, please try again.")
 
     def delete_order(self):
         order_number = int(input("\nEnter your order number: "))
