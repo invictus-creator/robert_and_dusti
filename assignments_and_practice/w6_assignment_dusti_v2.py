@@ -43,7 +43,8 @@ class PizzaApp(object):
     orders = []
 
     def get_order_from_list(self, order_number):
-        """Gets a pizza order when given the order number. Returns position index if found."""
+        """Gets a pizza order when given the order number. Returns position index if found.
+        """
         for index, pizza_order in enumerate(self.orders):
             if pizza_order.get_number() == order_number:
                 return index
