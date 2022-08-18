@@ -67,13 +67,13 @@ class PizzaApp(object):
     def display_orders(self):
         """Prints all orders to the console.
         """
-        title = ("** Order List **")
+        title = "** Order List **"
         print("*" * len(title))
         print(title)
         print("*" * len(title))
 
         # loop over each order and print order info
-        for pizza_order in self.orders:
+        for pizza_order in self.orders:3
             print(pizza_order)
             print("-" * len(title))
 
