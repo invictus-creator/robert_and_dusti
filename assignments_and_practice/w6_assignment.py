@@ -67,10 +67,11 @@ class BurritoApp(object):
         try:
             order_number = int(input("\nEnter your order number: "))
             for _order in self.orders:
-                if order_number == bu.get_number()
-                    print("Order number already exists. Please Enter a different number.")
-                self.add_order()
-                return
+                print("==> DEBUG ==> _order =", _order)
+                # if order_number == bu.get_number()
+                #     print("Order number already exists. Please Enter a different number.")
+                # self.add_order()
+                # return
             order_type = input("Enter your order type: ")
             order_amount = float(input("Enter your order amount: "))
 
