@@ -58,7 +58,8 @@ class BurritoApp(object):
             elif self._option == "5":
                 self.save_orders()
             elif self._option == "6":
-                pass
+                print("Exiting program")
+                break
             else:
                 print("Error: input invalid. Please choose one of the "
                       "prompted options: ")
@@ -67,11 +68,11 @@ class BurritoApp(object):
         try:
             order_number = int(input("\nEnter your order number: "))
             for _order in self.orders:
-                print("==> DEBUG ==> _order =", _order)
-                # if order_number == bu.get_number()
-                #     print("Order number already exists. Please Enter a different number.")
-                # self.add_order()
-                # return
+                if order_number == _order.get_number():
+                    print("Order number already exists. Please Enter a different number.")
+                    self.add_order()
+                    return
+
             order_type = input("Enter your order type: ")
             order_amount = float(input("Enter your order amount: "))
 
@@ -87,27 +88,37 @@ class BurritoApp(object):
             print("Input not recognized, please try again.")
 
     def delete_order(self):
-        order_number = int(input("\nEnter your order number: "))
-        for burrito_order in self.orders:
-            if burrito_order.get_number() == order_number:
-                location = self.orders.index(burrito_order)
-                self.orders.pop(location)
-                print("Removed order")
-                return
-        print("Sorry, we could not locate your order.")
+        try:
+            order_number = int(input("\nEnter your order number: "))
+            for burrito_order in self.orders:
+                if burrito_order.get_number() == order_number:
+                    location = self.orders.index(burrito_order)
+                    self.orders.pop(location)
+                    print("Removed order")
+                    return
+            print("Sorry, we could not locate your order.")
+        except ValueError:
+            print("Input not recognized. Please enter a number")
+            self.delete_order()
+            return
 
     def edit_order(self):
-        order_number = int(input("\nEnter your order number: "))
-        for burrito_order in self.orders:
-            if burrito_order.get_number() == order_number:
-                order_type = input("Enter your order type: ")
-                order_amount = float(input("Enter your order amount: "))
+        try:
+            order_number = int(input("\nEnter your order number: "))
+            for burrito_order in self.orders:
+                if burrito_order.get_number() == order_number:
+                    order_type = input("Enter your order type: ")
+                    order_amount = float(input("Enter your order amount: "))
 
                 burrito_order.set_number(order_number)
                 burrito_order.set_type(order_type)
                 burrito_order.set_amount(order_amount)
                 return
-        print("Sorry, we could not locate your order.")
+            print("Sorry, we could not locate your order.")
+        except ValueError:
+            print("Input not recognized, please enter a number.")
+            self.edit_order()
+            return
 
     def display_orders(self):
         print("\n******** Current Orders ********")
