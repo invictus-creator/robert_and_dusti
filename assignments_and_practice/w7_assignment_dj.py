@@ -1,35 +1,25 @@
+import random
+import time
 import turtle
 
-# the coordinates
-# of each corner
-shape = ((0, 0), (10, 25), (20, 0), (10, -7))
+window = turtle.Screen()
+window.bgcolor("black")
 
-# registering the new shape
-turtle.register_shape('diamond', shape)
+player = turtle.Turtle()
+player.shape("classic")
+player.begin_fill()
 
-screen = turtle.Screen()
-screen.bgcolor('blue')
+start = time.time()
+while time.time() - start < 60:  # run for 60 secs
+    player.pencolor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    player.forward(300)
+    player.left(230)
+    window.update()
 
-gary = turtle.Turtle()
-gary.shape("diamond")
-gary.color('red')
+player.end_fill()
+player.penup()
+x, y = (window.window_width() / 3), (window.window_height() / 2.5)
+player.goto((x, y))
+player.write("Dusti Johnson", True, align="center", font=('Segoe UI', 20, 'bold'))
 
-timer = 0
-size = 20
-
-
-def start_timer():
-    global timer, gary, size
-    timer += 1
-    gary.stamp()
-    size = size + 1
-    gary.forward(size)
-    gary.right(25)
-    if timer >= 60: # 60 seconds
-        return
-    screen.ontimer(start_timer, 1000) # 1 second
-
-
-start_timer()
-
-screen.mainloop()
+turtle.done()
