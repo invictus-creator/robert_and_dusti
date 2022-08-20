@@ -73,7 +73,7 @@ class PizzaApp(object):
         print("*" * len(title))
 
         # loop over each order and print order info
-        for pizza_order in self.orders:3
+        for pizza_order in self.orders:
             print(pizza_order)
             print("-" * len(title))
 
