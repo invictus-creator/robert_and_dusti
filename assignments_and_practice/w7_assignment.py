@@ -1,16 +1,40 @@
 import turtle
-turtle_run = turtle.Screen()
-turtle_run.bgcolor("grey")
+import time
+import random
+
+
+def hexagon(t, length):
+    """Draws a hexagon with the given length."""
+    for count in range(6):
+        t.forward(length)
+        t.left(60)
+
+
+turtle_app = turtle.Screen()
+turtle_app.bgcolor("grey")
 _turtle = turtle.Turtle()
 _turtle.shape("arrow")
-_turtle.color("red")
+_turtle.speed(10)
+turtle.colormode(255)
 
 _turtle.penup()
-size = 20
-for i in range(20):
-    _turtle.stamp()             # leave an impression on the canvas
-    size = size + 3             # increase the size on every iteration
-    _turtle.forward(size)       # move frogger along
-    _turtle.right(24)           # ... and turn her
-    turtle.ontimer(_turtle, t=400 * (i + 1))
-turtle_run.mainloop()
+x, y = (turtle_app.window_width() / 3, turtle_app.window_height() / 3)
+_turtle.goto(x, y)
+_turtle.write("Robert Timberlake", font=('Segue UI', 20, 'bold'))
+_turtle.goto(0, 0)
+_turtle.pendown()
+
+start_time = time.time()
+
+while time.time() - start_time <= 60:
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+
+    _turtle.pencolor(r, g, b)
+    _turtle.left(93)
+    hexagon(_turtle, 100)
+
+
+
+turtle.done()
