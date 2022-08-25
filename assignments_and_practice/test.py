@@ -12,17 +12,16 @@ Compute a user's account balance.
 4. The outputs are
     updated balance
 """
-
 def new_balance():
-    """Calculates new balance of user after withdraw or deposit"""
+    """Calculates new user balance after withdraw or deposit"""
     try:
         balance = float(input("Please enter your account balance: "))
         amount = float(input("Please amount to withdraw (-) or deposit (+): "))
-        current_balance = balance + amount
-        return current_balance
+        return balance + amount
     except ValueError:
         print("Error: Input not recognized. \nPlease enter a positive or negative number.\n")
-        new_balance()
+        return new_balance()
+
 
 #  Create loop
 while True:
@@ -32,15 +31,15 @@ while True:
     # If user inputs q then end program
     if name == "q":
         break
-    new_balance()
+
+    current_balance = new_balance()
 
     # Check if account is overdrawn or zero balance
-    elif newBalance > 0:
-        print("Your account balance is $%.2f" % newBalance)
-    elif newBalance == 0:
+    if current_balance > 0:
+        print("Your account balance is $%.2f" % current_balance)
+    elif current_balance == 0:
         print("Your account balance is zero.")
-    elif newBalance < 0:
-        print("Your account is overdrawn. The overdrawn amount is $%.2f" % newBalance)
+    elif current_balance < 0:
+        print("Your account is overdrawn. The overdrawn amount is $%.2f" % current_balance)
 
 print("Exiting Program")
-
