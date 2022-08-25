@@ -32,8 +32,7 @@ while True:
     # If user inputs q then end program
     if name == "q":
         break
-
-    newBalance = new_balance()
+    new_balance()
 
     # Check if account is overdrawn or zero balance
     elif newBalance > 0:
