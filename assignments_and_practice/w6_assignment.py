@@ -1,14 +1,10 @@
 """
-Program: w3_assignment.py
+Program: w6_assignment.py
 Author: Robert Timberlake
-Compute a user's account balance.
+Creates a dictionary of burrito orders
 1. The inputs are
-    name
-    amount 1
-    amount 2
-    amount 3
-    amount 4
-    amount 5
+    menu selection
+
 3. Computations:
     amount sum = amount 1 + amount 2 + amount 3 + amount 4 + amount 5
 4. The outputs are

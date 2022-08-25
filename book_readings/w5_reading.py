@@ -80,7 +80,7 @@ numbers = [2, 3, 4, 5]
 numbers
 """[2, 3, 4, 5]"""
 for index in range(len(numbers)):  # I believe this is saying do this for the entire list
-    numbers[index] = numbers[index] ** 2  # I believe this is referencing each position TODO
+    numbers[index] = numbers[index] ** 2  # I believe this is referencing each position
 numbers
 """[4, 9, 16, 25]"""
 # ====================================================================================================================
@@ -235,7 +235,7 @@ average([1, 3, 5, 7])  # calling on our function "average"
 # ====================================================================================================================
 def odd(x):
     """Returns True if x is odd or False otherwise"""
-    if x % 2 == 1:  # can we go over % again TODO
+    if x % 2 == 1:  # can we go over % again
         return True
     else:
         return False
