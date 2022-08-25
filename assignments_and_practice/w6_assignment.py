@@ -1,14 +1,15 @@
 """
 Program: w6_assignment.py
 Author: Robert Timberlake
-Creates a dictionary of burrito orders
+Creates a list of burrito orders using classes and methods
 1. The inputs are
     menu selection
+    order number
+    order type
+    order amount
+2. The outputs are
+    order list
 
-3. Computations:
-    amount sum = amount 1 + amount 2 + amount 3 + amount 4 + amount 5
-4. The outputs are
-    amount sum
 """
 
 import pickle
@@ -16,8 +17,8 @@ import pickle
 
 class BurritoOrder(object):
 
-    # Create a function that displays a menu and returns the choice
     def __init__(self):
+        # Define variables
         self._number = None
         self._type = None
         self._amount = None
@@ -43,9 +44,10 @@ class BurritoOrder(object):
 
 class BurritoApp(object):
     _option = None
-    orders = []
+    orders = []  # Creates order list
 
     def menu(self):
+        """Displays the menu and inputs """
         print("\n********** Main Menu ***********")
         print("1. Add Order")
         print("2. Delete Order")
@@ -57,6 +59,7 @@ class BurritoApp(object):
         self._option = input("Choose a menu option from 1-5 or 6 to exit the program: ")
 
     def run(self):
+        """Calls on method that corresponds to menu selection"""
         while True:
             self.menu()
 
@@ -78,6 +81,7 @@ class BurritoApp(object):
                       "prompted options: ")
 
     def add_order(self):
+        """Adds an order to the list"""
         try:
             order_number = int(input("\nEnter your order number: "))
             for _order in self.orders:
@@ -89,9 +93,7 @@ class BurritoApp(object):
             order_type = input("Enter your order type: ")
             order_amount = float(input("Enter your order amount: "))
 
-            # New burrito order
             burrito_order = BurritoOrder()
-
             burrito_order.set_number(order_number)
             burrito_order.set_type(order_type)
             burrito_order.set_amount(order_amount)
@@ -101,6 +103,7 @@ class BurritoApp(object):
             print("Input not recognized, please try again.")
 
     def delete_order(self):
+        """Removes an order from the list"""
         try:
             order_number = int(input("\nEnter your order number: "))
             for burrito_order in self.orders:
@@ -116,6 +119,7 @@ class BurritoApp(object):
             return
 
     def edit_order(self):
+        """Changes an order from the list"""
         try:
             order_number = int(input("\nEnter your order number: "))
             for burrito_order in self.orders:
@@ -134,6 +138,7 @@ class BurritoApp(object):
             return
 
     def display_orders(self):
+        """Displays order list"""
         print("\n******** Current Orders ********")
 
         for burrito_order in self.orders:
@@ -142,6 +147,7 @@ class BurritoApp(object):
             print("Order amount: %2s" % burrito_order.get_amount())
 
     def save_orders(self):
+        """Saves the order list to a file"""
         file_name = "Burrito_Orders.txt"
         with open(file_name, 'w') as f:
             for burrito_order in self.orders:
@@ -151,5 +157,6 @@ class BurritoApp(object):
                 f.write('\n')
 
 
+# Run the main class
 app = BurritoApp()
 app.run()
