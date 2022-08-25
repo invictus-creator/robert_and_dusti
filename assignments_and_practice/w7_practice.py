@@ -1,4 +1,3 @@
-# Modify the code below
 """
 File: ccurve.py
 Project 7.2
