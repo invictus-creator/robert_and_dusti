@@ -70,6 +70,7 @@ def set_amount():
         print("Error: Input not recognized.")
         amount = None
 
+
 #  Create loop
 while True:
     # Get name from user
