@@ -105,7 +105,8 @@ class BurritoApp(object):
             while True:
                 choice = input("Input not recognized. Input 'q' to quit to main menu or press 'enter' to try again:")
                 if choice == "q":
-                    self.run()
+   1
+self.run()
                 elif choice == "":
                     self.add_order()
                 else:
@@ -121,7 +122,16 @@ class BurritoApp(object):
                     self.orders.pop(location)  # Removes order
                     print("Removed order")
                     return
-            print("Sorry, we could not locate your order.")
+            while True:
+                    choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or "
+                                   "press enter to try again:")
+                    if choice == "q":
+                        self.run()
+                    elif choice == "":
+                        self.delete_order()
+                    else:
+                        continue
+            print()
         # Handle value errors
         except ValueError:
             print("Input not recognized. Please enter a number")
@@ -137,12 +147,22 @@ class BurritoApp(object):
                     order_type = input("Enter your order type: ")  # Changes order type
                     order_amount = float(input("Enter your order amount: "))  # Changes order amount
 
-                # Save edited order
-                burrito_order.set_number(order_number)
-                burrito_order.set_type(order_type)
-                burrito_order.set_amount(order_amount)
-                return
-            print("Sorry, we could not locate your order.")
+                    # Save edited order
+                    burrito_order.set_number(order_number)
+                    burrito_order.set_type(order_type)
+                    burrito_order.set_amount(order_amount)
+                    return
+            else:
+                while True:
+                    choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or "
+                                   "press enter to try again:")
+                    if choice == "q":
+                        self.run()
+                    elif choice == "":  # enter should restart method
+                        self.edit_order()
+                    else:
+                        continue
+
         # Handle value errors
         except ValueError:
             print("Input not recognized, please enter a number.")
@@ -167,6 +187,7 @@ class BurritoApp(object):
                 f.write('Order type: %2s, ' % burrito_order.get_type())
                 f.write('Order amount: %2s' % burrito_order.get_amount())
                 f.write('\n')
+        print("All orders saved successfully.")
 
 
 # Run the main class
