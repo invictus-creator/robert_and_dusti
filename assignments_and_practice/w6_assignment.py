@@ -105,8 +105,7 @@ class BurritoApp(object):
             while True:
                 choice = input("Input not recognized. Input 'q' to quit to main menu or press 'enter' to try again:")
                 if choice == "q":
-   1
-self.run()
+                    self.run()
                 elif choice == "":
                     self.add_order()
                 else:
@@ -152,16 +151,14 @@ self.run()
                     burrito_order.set_type(order_type)
                     burrito_order.set_amount(order_amount)
                     return
-            else:
-                while True:
-                    choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or "
-                                   "press enter to try again:")
-                    if choice == "q":
-                        self.run()
-                    elif choice == "":  # enter should restart method
-                        self.edit_order()
-                    else:
-                        continue
+            while True:
+                choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or press enter to try again:")
+                if choice == "q":
+                    self.run()
+                elif choice == "":  # enter should restart method
+                    self.edit_order()
+                else:
+                    continue
 
         # Handle value errors
         except ValueError:
