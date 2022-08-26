@@ -99,12 +99,13 @@ class BurritoApp(object):
             burrito_order.set_amount(order_amount)
 
             self.orders.append(burrito_order)
+            print("Your order has been successfully added.")
         # Handle value errors
         except ValueError:
             while True:
                 choice = input("Input not recognized. Input 'q' to quit to main menu or press 'enter' to try again:")
                 if choice == "q":
-                    return self.run()
+                    return
                 elif choice == "":
                     return self.add_order()
                 else:
@@ -124,12 +125,12 @@ class BurritoApp(object):
                 choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or "
                                "press enter to try again:")
                 if choice == "q":
-                    return self.run()
+                    return
                 elif choice == "":
                     return self.delete_order()
                 else:
                     continue
-            print("Order successfully removed.")
+            print("The order has been successfully removed.")
         # Handle value errors
         except ValueError:
             print("Input not recognized. Please enter a number")
@@ -148,14 +149,13 @@ class BurritoApp(object):
                     burrito_order.set_number(order_number)
                     burrito_order.set_type(order_type)
                     burrito_order.set_amount(order_amount)
-                    print("Order successfully changed.")
+                    print("Your order changes are saved")
                     return
             while True:
                 choice = input("Sorry, we could not locate your order. Input 'q' to quit to the main menu or press "
                                "enter to try again:")
                 if choice == "q":
-                    return self.run()
-
+                    return
                 elif choice == "":  # enter should restart method
                     return self.edit_order()
 
