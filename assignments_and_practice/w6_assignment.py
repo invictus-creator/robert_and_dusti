@@ -16,7 +16,6 @@ import pickle
 class BurritoOrder(object):
 
     def __init__(self):
-        # Define variables
         self._number = None
         self._type = None
         self._amount = None
@@ -53,14 +52,15 @@ class BurritoApp(object):
         print("4. Display Order")
         print("5. Save Order")
         print("6. Exit the Program")
-
+        # Request user input for menu selection
         self._option = input("Choose a menu option from 1-5 or 6 to exit the program: ")
 
     def run(self):
-        """Calls on method that corresponds to menu selection"""
+        """Main program loop. Calls on menu and starts user selected choice."""
         while True:
-            self.menu()
+            self.menu()  # calls menu and gets returned choice
 
+            # Call on method that corresponds to user choice
             if self._option == "1":
                 self.add_order()
             elif self._option == "2":
@@ -74,7 +74,7 @@ class BurritoApp(object):
             elif self._option == "6":
                 print("Exiting program")
                 break
-            else:
+            else:  # If user choice does not correspond to a method display an error and restart loop
                 print("Error: input invalid. Please choose one of the "
                       "prompted options: ")
 
@@ -82,8 +82,11 @@ class BurritoApp(object):
         """Adds an order to the list"""
         try:
             order_number = int(input("\nEnter your order number: "))
+
+            # Check if existing order already exists with order number
             for _order in self.orders:
                 if order_number == _order.get_number():
+                    # Display error and restart method if order number collision found
                     print("Order number already exists. Please Enter a different number.")
                     self.add_order()
                     return
@@ -97,20 +100,29 @@ class BurritoApp(object):
             burrito_order.set_amount(order_amount)
 
             self.orders.append(burrito_order)
+        # Handle value errors
         except ValueError:
-            print("Input not recognized, please try again.")
+            while True:
+                choice = input("Input not recognized. Input 'q' to quit to main menu or press 'enter' to try again:")
+                if choice == "q":
+                    self.run()
+                elif choice == "":
+                    self.add_order()
+                else:
+                    continue
 
     def delete_order(self):
         """Removes an order from the list"""
         try:
             order_number = int(input("\nEnter your order number: "))
             for burrito_order in self.orders:
-                if burrito_order.get_number() == order_number:
-                    location = self.orders.index(burrito_order)
-                    self.orders.pop(location)
+                if burrito_order.get_number() == order_number:  # Checks if order number exists
+                    location = self.orders.index(burrito_order)  # Gets the order location
+                    self.orders.pop(location)  # Removes order
                     print("Removed order")
                     return
             print("Sorry, we could not locate your order.")
+        # Handle value errors
         except ValueError:
             print("Input not recognized. Please enter a number")
             self.delete_order()
@@ -121,15 +133,17 @@ class BurritoApp(object):
         try:
             order_number = int(input("\nEnter your order number: "))
             for burrito_order in self.orders:
-                if burrito_order.get_number() == order_number:
-                    order_type = input("Enter your order type: ")
-                    order_amount = float(input("Enter your order amount: "))
+                if burrito_order.get_number() == order_number:  # Checks if order number exists
+                    order_type = input("Enter your order type: ")  # Changes order type
+                    order_amount = float(input("Enter your order amount: "))  # Changes order amount
 
+                # Save edited order
                 burrito_order.set_number(order_number)
                 burrito_order.set_type(order_type)
                 burrito_order.set_amount(order_amount)
                 return
             print("Sorry, we could not locate your order.")
+        # Handle value errors
         except ValueError:
             print("Input not recognized, please enter a number.")
             self.edit_order()
@@ -146,9 +160,9 @@ class BurritoApp(object):
 
     def save_orders(self):
         """Saves the order list to a file"""
-        file_name = "Burrito_Orders.txt"
-        with open(file_name, 'w') as f:
-            for burrito_order in self.orders:
+        file_name = "Burrito_Orders.txt"  # Assigns variable to file name
+        with open(file_name, 'w') as f:  # Opens file
+            for burrito_order in self.orders:  # Saves all orders from list into file
                 f.write('Order number: %2s, ' % burrito_order.get_number())
                 f.write('Order type: %2s, ' % burrito_order.get_type())
                 f.write('Order amount: %2s' % burrito_order.get_amount())
